@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[]args){
+        double d = 8.5 / 2;
+        long l = 5 + 2L;
+        System.out.println(d);
+        System.out.println(l);
+        /*
+        小さなデータを大きなデータに入れるのは暗黙の型変換
+        大きなデータを小さなデータに入れるのは明示的な型変換(キャスト)
+         */
+    }
+}

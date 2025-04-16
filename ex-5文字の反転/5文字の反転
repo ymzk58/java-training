@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        String[] alfha = new String[5];
+        for(int i = 0; i < 5; i++){
+            System.out.print((i+1) + "文字目を入力してください:");
+            alfha[i] = new java.util.Scanner(System.in).nextLine();
+        }
+        for(int i = 5; i > 0; i--){
+            System.out.println((i) + "文字目:" + alfha[i-1]);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+public class Main{
+    public static void introduceOneself(String name, int age, double tall, char zodiac){
+        System.out.println(age + "歳の" + name + "です");
+        System.out.println("身長は" + tall + "cmで、十二支は" + zodiac + "です");
+    }
+    public static void main(String[] args){
+        introduceOneself("山崎", 19, 158.0, '酉');
+    }
+}

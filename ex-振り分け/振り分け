@@ -1,0 +1,53 @@
+public class Main{
+    public static void main(String[] args){
+        //10個の乱数
+        int[] input = {
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100),
+            new java.util.Random().nextInt(100)
+        };
+        //多次元配列のサイズを求める
+        int evenCount = 0;
+        int oddCount = 0;
+        for(int i = 0; i < input.length; i++){
+            if((input[i]%2) == 0){
+                evenCount++;
+            }else{
+                oddCount++;
+            }
+        }
+        //多次元配列を作る
+        int[][] evenOdd = new int[2][];
+        evenOdd[0] = new int [evenCount];   //[0]==偶数
+        evenOdd[1] = new int [oddCount];    //[1]==奇数
+        //値を格納する
+        int evenIndex = 0;
+        int oddIndex = 0;
+        for(int i = 0; i < input.length; i++){
+            if((input[i]%2)==0){
+                evenOdd[0][evenIndex++] = input[i];
+            } else{
+                evenOdd[1][oddIndex++] = input[i];
+            }
+        }
+        //出力
+        System.out.print("偶数 [ ");
+        for(int i = 0; i < evenOdd[0].length;i++){
+            System.out.print(evenOdd[0][i] + " ");
+        }
+        System.out.println("]");
+
+        System.out.print("奇数 [ ");
+        for(int i = 0; i < evenOdd[1].length;i++){
+            System.out.print(evenOdd[1][i] + " ");
+        }
+        System.out.println("]");
+    }
+}

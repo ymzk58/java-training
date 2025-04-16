@@ -1,0 +1,26 @@
+public class Main{
+    public static boolean isPrime(int number){
+        //前提
+        if(number==2){
+            return true;
+        } else if(number == 1){
+            return false;
+        }
+        for(int i = 2; i <= Math.sqrt(number); i++){
+            if(number%i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args){
+        for(int i = 3; i <= 100; i++){
+            System.out.print(i + ":");
+            if(isPrime(i) == true){
+                System.out.println("素数である");
+            } else{
+                System.out.println();
+            }
+        }
+    }
+}

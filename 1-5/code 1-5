@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args){
+        final double pi = 3.14;   //π(final)
+        int pie = 5;        //パイの半径
+        System.out.println("半径"+pie+"cmのパイの面積は、");
+        System.out.println(pie*pie*pi);
+        System.out.println("半径を倍にします");
+        pi = 10;            //finalによる書き換えエラー
+        
+        System.out.println("半径"+pie+"cmのパイの面積は、");
+        System.out.println(pie*pie*pi);
+    }
+}

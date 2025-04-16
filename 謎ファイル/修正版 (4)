@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main (String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("N:");
+        int numN = scanner.nextInt();
+        System.out.print("M:");
+        int numM = scanner.nextInt();
+        int[][] numNM = new int[numN][numM];
+        scanner.nextLine(); 
+        System.out.println((numN*numM) + "個の整数をスペース区切りで入力してください");
+        String line = scanner.nextLine();
+        String[] tokens = line.split(" ");
+        int index = 0;
+        for(int i = 0; i < numN; i++){
+            for(int j = 0; j < numM; j++){
+                numNM[i][j] = Integer.parseInt(tokens[index++]);
+            }
+        }
+        for(int i = 0; i < numN; i++){
+            for(int j = 0; j < numM; j++){
+                System.out.print(numNM[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}

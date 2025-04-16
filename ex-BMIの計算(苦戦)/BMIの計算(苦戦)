@@ -1,0 +1,14 @@
+public class Main{
+    public static void main(String[] args){
+        System.out.println("BMIを計算します");
+        System.out.println("身長と体重を入力してください");
+        System.out.print("身長(cm)＞");
+        int heightCm = new java.util.Scanner(System.in).nextInt();
+        System.out.print("体重(kg)＞");
+        int weight = new java.util.Scanner(System.in).nextInt();
+        System.out.println("cm=" + heightCm + " kg=" + weight);
+        double heightM = heightCm/100.0;	//苦戦した
+        double BMI = (weight/(heightM*heightM));
+        System.out.println("あなたのBMIは" + BMI + "でした");
+    }
+}

@@ -1,0 +1,13 @@
+public class Main{
+    public static void main(String[] args){
+        for(int i = 1000; i <= 3000; i++){
+            if(i%400 == 0){
+                System.out.println(i);
+            }else if(i%100 == 0){
+                continue;
+            }else if(i%4 == 0){
+                System.out.println(i);
+            }
+        }
+    }
+}

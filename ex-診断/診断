@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        boolean open = false;   //falseで初期化
+        //曜日
+        System.out.println("曜日を入力してください");
+        System.out.print("0=日曜、1=月曜、2=火曜、3=水曜、4=木曜、5=金曜、6=土曜 >");
+        int dayOfWeek = scanner.nextInt();
+
+        //時間
+        System.out.println("時間を入力してください");
+        System.out.print("0=午前、1=午後、2=夜間 >");
+        int timeZone = scanner.nextInt();
+
+        //処理(開いてるか)
+        switch(timeZone){
+            case 0 ->{  //午前
+                switch(dayOfWeek){
+                    case 1,2,3,4,5 ->{
+                        open = true;
+                    }
+                }
+            }
+            case 1 ->{  //午後
+                switch(dayOfWeek){
+                    case 1,2,5 ->{
+                        open = true;
+                    }
+                }
+            }
+            case 2 ->{  //夜間
+                switch(dayOfWeek){
+                    case 6 ->{
+                        open = true;
+                    }
+                }
+            }
+        }
+
+        //報告
+        if(open == true){
+            System.out.println("病院は開いています");
+            int result = new java.util.Random().nextInt(4); //診断結果
+            switch(result){
+                case 0 ->{
+                    System.out.println("インフルエンザ");
+                }
+                case 1 ->{
+                    System.out.println("新型コロナウィルス");
+                }
+                case 2 ->{
+                    System.out.println("風邪");
+                }
+                case 3 ->{
+                    System.out.println("仮病");
+                }
+            }
+
+        } else{
+            System.out.println("病院は開いていません");
+        }
+    }
+}

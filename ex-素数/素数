@@ -1,0 +1,35 @@
+public class Main{
+
+    public static boolean isPrime(int num){
+
+        //前提条件
+        if(num <= 1){   //約数を1つしか持たない為、1は素数ではない。1以下の数も素数ではない。
+            return false;
+        }else if(num == 2){     //必然的に2つの約数しか持てない為、素数である。
+            return true;
+        }
+
+        //判定処理
+        /*1と自身の数以外に約数があるか調べたい為、int = 2;
+         * 約数は平方根を境目に、相対的な結果を示すため、
+           求めるのは平方根までで良い   Math.sqrt(num)*/
+           
+        for(int i = 2; i <= Math.sqrt(num); i++){   //※i < Math.sqrt(num)にしない様注意する
+            if(num%i == 0){                         //num=4の場合平方根の2が含まれずforループを抜けてしまう
+                return false;   //1とその数以外で割り切れた時点で、平方根ではない事が確定 → false
+            }
+        }
+        return true;    //全ての処理を終えても、約数が現れなかった場合、その数は素数である → true
+    }
+
+    public static void main(String[] args){
+        for(int i = 3; i <= 100; i++){
+            System.out.print(i + ":");
+            if(isPrime(i) == true){
+                System.out.println("素数である");
+            } else{
+                System.out.println();
+            }
+        }
+    }
+}

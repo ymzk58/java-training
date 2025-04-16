@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Main{
+    public static int add(int a, int b){
+        int ans = a + b;
+        return ans;
+    }
+
+    public static int sub(int a, int b){
+        int ans = a + b;
+        return ans;
+    }
+
+    public static void showHistory(String[] history, int index){
+        for(int i = 0; i < index; i++){
+            System.out.println(history[i]);
+        }
+    }
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        String[] history = new String[10];
+        int index = 0;
+        System.out.println("モード選択");
+        outer: while(true){
+            System.out.print("1 足し算, 2 引き算, 3 履歴, 0 終了 > ");
+            int select = scanner.nextInt();
+            switch(select){
+                case 0 ->{
+                    break outer;
+                }
+                case 1 ->{
+                    System.out.println("足し算を選択しました");
+                    System.out.print("一つ目の数を入力してください > ");
+                    int a = scanner.nextInt();
+                    System.out.print("二つ目の数を入力してください > ");
+                    int b = scanner.nextInt();
+                    int ans = add(a,b);
+                    System.out.println("計算結果:" + ans);
+                    history[index] = (a + " + " + b + " = " + ans);
+                    index++;
+                }
+                case 2 ->{
+                    System.out.println("引き算を選択しました");
+                    System.out.print("一つ目の数を入力してください > ");
+                    int a = scanner.nextInt();
+                    System.out.print("二つ目の数を入力してください > ");
+                    int b = scanner.nextInt();
+                    int ans = add(a,b);
+                    System.out.println("計算結果:" + ans);
+                    history[index] = (a + " + " + b + " = " + ans);
+                    index++;
+                }
+                case 3 ->{
+                    System.out.println("履歴を表示します");
+                    
+                    showHistory(history, index);
+                }
+            }
+        }
+    }
+}

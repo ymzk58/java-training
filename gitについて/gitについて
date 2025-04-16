@@ -1,0 +1,105 @@
+・ディレクトリを選ぶ
+・何もなければgit initで初期化
+※<<<ここで自分が誰かgitに明示する>>>
+
+・リモートリポジトリにローカルリポジトリからアクセスする
+
+・git add <ステージング>
+ローカルリポジトリ上にステージングする
+ステージングしなければローカルリポジトリ上では
+無いものとして扱われる。
+
+
+・git commit -m "MESSAGE"
+ステージングされたファイルを
+メッセージを付けて梱包する
+
+・git push origin(2回目)
+ここでようやく梱包されたファイルを
+リモートリポジトリ上にアップされる
+
+
+・リモートリポジトリからファイルを貰う
+(新規) git clone
+(既存) git pull origin
+
+
+<マスターとは>
+完成品となるコミットの複合体
+(元祖変更履歴)
+
+<ブランチとは>
+マスターから分かれたコミットのこと
+マスターに合流できる
+
+
+<マスターからブランチを切る>
+(新規)git checkout -b develop main
+(既存)git checkout develop
+
+<ブランチからマスターへ>
+git checkout master
+
+(確認)
+git branch
+
+【githubを利用する場合】
+＜DEPELOP側＞
+develop側で開発
+git push origin develop
+github上でプルリクエストを作る
+＜MAIN側＞
+プルリクエストが送られたら評価して
+問題があれば書き込み
+問題が無ければmainにマージする
+
+
+
+【githubを利用しない場合】
+＜DEVELOP側＞
+develop側で開発をする
+リモートリポジトリのブランチに git push origin develop
+責任者にpullリクエストをお願いする
+
+＜MAIN側＞
+pullしてdevelopがうまく動けば
+git merge developでマージする
+それをmainからgit push origin
+すればdevelopはmainに合流される
+
+
+
+【1つのdevelopに対して複数人で作業する場合】
+先にpushされたdevelopが正当な物として扱われるためエラーが出る
+git pull developでリモートからdevelopを受け取った後にpushする
+※本来
+git fetch originの後に
+git merge origin/develop
+
+【上級者向けrebase】
+git fetch origin
+git rebase origin/develop develop
+git push origin -f
+
+【rebaseとmergeの違い】
+rebase: コミットツリーから分岐して、処理を書き進めた後コミットツリーの
+	最終コミットの後ろに配置するので、<<順番の整合性が取れない>>
+
+merge:	コミットツリーから分岐して、処理を書き進めた後にコミットツリーに合流
+	<<順番の整合性は保たれる>>
+
+
+【コンフリクト】
+同じファイルの同じ行に変数を加えた場合、CONFLICTエラーが出る
+該当箇所を修正した後、git commitを行う
+それが出来ればgit push
+
+
+【リセット】
+git reset --hard HEAD
+編集中の内容を全て吹き飛ばして
+最終コミットの地点まで戻れる
+
+【戻れるリセット】
+git stash →消す(正確には一時的なメモリに格納)
+git stash pop →消したの戻せる (メモリから取り出す)

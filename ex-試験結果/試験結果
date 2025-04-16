@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        System.out.print("自己採点結果を入力＞");
+        int selfPt = new java.util.Scanner(System.in).nextInt();
+        //ケース1(合否)
+        if(selfPt >= 60){
+            System.out.println("合格");
+        } else{
+            System.out.println("不合格");
+        }
+        //ケース2(出来栄え)
+        if(selfPt >= 80){
+            System.out.println("たいへんよくできました");
+        } else if(selfPt >= 60 && selfPt < 80){
+            System.out.println("よくできました");
+        } else{
+            System.out.println("ざんねんでした");
+        }
+        //ケース3(評価)
+        if(selfPt >= 80){
+            System.out.println("優");
+        }else if(selfPt >= 70 && selfPt <80){
+            System.out.println("良");
+        }else if(selfPt >= 60 && selfPt <70){
+            System.out.println("可");
+        }else{
+            System.out.println("不可");
+        }
+    }
+}

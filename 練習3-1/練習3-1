@@ -1,0 +1,21 @@
+public class Main{
+    public static void main(String[] args){
+        int weight = 60;
+        int age1 = 16;
+        int age2 = 16;
+        int age = 9;
+        String name = "湊";
+        if (weight == 60){
+            System.out.println("Q1 True");
+        };
+        if ((age1+age2)*2 > 60){
+            System.out.println("Q2 True");
+        };
+        if((age%2) == 1){
+            System.out.println("Q3 True");
+        }
+        if(name.equals("湊")){
+            System.out.println("Q4 True");
+        }
+    }
+}

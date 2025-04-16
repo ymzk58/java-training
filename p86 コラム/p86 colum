@@ -1,0 +1,11 @@
+public class Main {
+    public static void main(String[]args){
+        byte b1 = 100; //byte型-128 ～ 127
+        byte b2 = 50;
+        //byte a = b1 + b2;//   
+                            /*byte,shor型の演算はオーバーフローを防ぐために
+                              代入先がbyteやshortではエラーになり、
+                              強制的にint型に変換される*/
+        System.out.println(b1+b2);
+    }
+}

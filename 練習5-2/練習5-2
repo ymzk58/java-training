@@ -1,0 +1,12 @@
+public class Main{
+    public static void email(String title, String address, String txt){
+        System.out.println(address + "に以下のメールを送信しました");
+        System.out.println("件名:" + title);
+        System.out.println("本文:" + txt);
+    }
+    public static void main(String[] args){
+        email("地球の運動について",
+        "chi.gmail.com",
+        "若き天才作家、魚豊が世に放つ、地動説を証明することに自らの信念と命を懸けた者たちの物語。");
+    }
+}

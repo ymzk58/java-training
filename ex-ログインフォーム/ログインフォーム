@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main{
+    public static boolean loginCheck(String inputUser, String inputPass){
+        String correctUser = "helloUsera";
+        String correctPass = "helloPass";
+        if(inputUser.equals(correctUser) && inputPass.equals(correctPass)){     //これアウト!! → (inputUser==correctUser && inputPass==correctPass)
+            return true;                                                        //String型は参照型なので、値ではなくアドレスを比較してしまう
+        }                                                                       //参照型では.equal()を使いましょう!!
+        return false;
+    }
+    public static void main(String[] args){
+        //入力受付
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("ログインします");
+        for(;;){
+            System.out.print("ユーザー名: ");
+            String userName = scanner.nextLine();
+            System.out.print("パスワード: ");
+            String password = scanner.nextLine();
+            //結果の出力
+            boolean success = loginCheck(userName, password);
+            if(success == true){
+                System.out.println("ログイン成功");
+                break;
+            } else{
+                System.out.println("ログイン失敗");
+            }
+        }
+        scanner.close();
+    }
+}

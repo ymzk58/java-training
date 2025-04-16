@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        System.out.print("応募番号 >");
+        int num = new java.util.Scanner(System.in).nextInt();
+        int caseNumber = 0; //0で初期化
+
+        //仕分け
+        if(num%7==0 && num%47==0){
+            caseNumber = 3;     // case3 == AB (7と47の倍数)
+        } else if(num%7==0){    
+            caseNumber = 2;     // case2 == A  (7の倍数)
+        } else if(num%47 == 0){
+            caseNumber = 1;     // case1 == B  (47の倍数)
+        } else{
+            caseNumber = 0;     // case0 == N  (それ以外)
+        }
+
+        //出力
+        switch(caseNumber){
+            case 0 ->{
+                System.out.println("N");
+            }
+            case 1 ->{
+                System.out.println("B");
+            }
+            case 2 ->{
+                System.out.println("A");
+            }
+            case 3 ->{
+                System.out.println("AB");
+            }
+        }
+    }
+}
