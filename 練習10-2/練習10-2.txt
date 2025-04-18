@@ -1,0 +1,3 @@
+SmartPhone → Phone → Machine
+AE86 → Car → Vehicle
+EnglishDictionary → Dictionary → Book
