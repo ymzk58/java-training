@@ -1,0 +1,7 @@
+アMachine
+イSmartPhone
+ウVehicle
+エAE86
+オBook
+カEnglishDictionary
+

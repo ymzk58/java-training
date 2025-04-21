@@ -1,0 +1,19 @@
+VSCODEでCleric.javaなどjavaファイルを作ったときに
+
+public class Cleric{
+
+}
+
+みたいに勝手に書いてくれるのは
+Extension Pack For Javaという拡張機能が提供している自動補完機能
+
+
+VSCODEを起動して1回目はそれが動作しない事があるが
+それはJava Language Serverが起動中だから
+
+Java Language Serverって何？
+そもそもVSCODEはただのテキストエディタだが、
+拡張機能がその利便性を担保してくれてる
+Java Language ServerもLanguage Support for Java™ by Red Hat
+という拡張機能の一部で、Java関連の利便性を担保してくれる
+各言語ごとに利便性を担保する拡張機能がある(場合が多い)
