@@ -1,0 +1,6 @@
+<エラー>
+Wizard.java:9: エラー: powerはWandでprivateアクセスされます
+
+<原因>
+WizardからWandのpowerにアクセスしようとしたが、
+powerがprivateで定義されていたから
