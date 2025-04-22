@@ -1,0 +1,8 @@
+Swordインスタンス
+Item
+Swordを生成したが、
+ザックリとItemと見なす。
+
+Monster a = new Slime();
+Slimeインスタンス
+ザックリとMonsterと見なす。
