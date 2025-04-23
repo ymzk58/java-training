@@ -1,0 +1,7 @@
+mainメソッドの横に書いてあるthrows IOExceptionは
+mainメソッドでIOExceptionが起きてもここで処理しないで上(JVM)に投げつけますよ
+という宣言文
+
+mainメソッドないに書いてある
+throw new IOExceptionは
+IOEXceptionインスタンスを作成して mainメソッドに投げている
